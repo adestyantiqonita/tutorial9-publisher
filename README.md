@@ -27,3 +27,11 @@ Berikut adalah tampilan ketika publisher mengirimkan event dan subscriber meneri
 ![Publisher Console](images/publisher-console.png)
 
 Ketika publisher dijalankan dengan `cargo run`, publisher mengirimkan 5 event `UserCreatedEventMessage` ke message broker RabbitMQ. Event-event tersebut kemudian dikonsumsi dan diproses oleh subscriber, yang mencetak pesan ke console. Hal ini menunjukkan bahwa komunikasi antara publisher dan subscriber berhasil dilakukan secara tidak langsung melalui RabbitMQ sebagai perantara.
+
+## Monitoring Chart Based on Publisher
+
+Berikut adalah tampilan grafik RabbitMQ setelah publisher dijalankan:
+
+![RabbitMQ Chart](images/rabbitmq-chart.png)
+
+Spike yang terlihat pada grafik "Message rates" terjadi karena publisher mengirimkan 5 event sekaligus ke message broker. Setiap kali `cargo run` dijalankan pada publisher, akan muncul lonjakan (spike) pada grafik yang menunjukkan adanya pesan yang dipublish dan langsung dikonsumsi oleh subscriber. Semakin sering publisher dijalankan, semakin banyak spike yang muncul pada grafik.
