@@ -18,3 +18,12 @@ URL yang sama pada publisher dan subscriber berarti keduanya terhubung ke **mess
 Berikut adalah tampilan RabbitMQ yang berhasil dijalankan melalui Docker:
 
 ![RabbitMQ Running](images/rabbitmq-running.png)
+
+## Sending and Processing Event
+
+Berikut adalah tampilan ketika publisher mengirimkan event dan subscriber menerimanya:
+
+![Subscriber Console](images/subscriber-console.png)
+![Publisher Console](images/publisher-console.png)
+
+Ketika publisher dijalankan dengan `cargo run`, publisher mengirimkan 5 event `UserCreatedEventMessage` ke message broker RabbitMQ. Event-event tersebut kemudian dikonsumsi dan diproses oleh subscriber, yang mencetak pesan ke console. Hal ini menunjukkan bahwa komunikasi antara publisher dan subscriber berhasil dilakukan secara tidak langsung melalui RabbitMQ sebagai perantara.
